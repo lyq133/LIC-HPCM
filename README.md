@@ -17,8 +17,6 @@ Our method achieves **state-of-the-art** compression performance gains on **Koda
 
 ## Performance
 
-<img src="./assets/fig1.png" alt="fig1" style="zoom: 5%;" />
-
 <img src="./assets/table1.png" alt="table1" style="zoom:25%;" />
 
 ## Pretrained Model
