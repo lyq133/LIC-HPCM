@@ -1,5 +1,7 @@
 # Learned Image Compression with Hierarchical Progressive Context Modeling [ICCV 2025]
 
+[[arXiv 2507.19125]](https://arxiv.org/abs/2507.19125)
+
 ## Introduction
 
 This repository is the official Pytorch implementation of the paper "Learned Image Compression with Hierarchical Progressive Context Modeling".
