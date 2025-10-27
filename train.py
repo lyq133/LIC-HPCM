@@ -68,6 +68,9 @@ class AverageMeter:
         self.count = 0
 
     def update(self, val, n=1):
+        # [FIX] Get Python float to prevent graph leak
+        if isinstance(val, torch.Tensor):
+            val = val.detach().item()
         self.val = val
         self.sum += val * n
         self.count += n
