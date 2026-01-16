@@ -162,7 +162,7 @@ class BB(nn.Module):
                 mask_0 = torch.cat((m * m0, m * m1), dim=1)
                 mask_1 = torch.cat((m * m1, m * m0), dim=1)
                 self.mask_for_two_part[curr_mask_str] = [mask_0, mask_1]
-        return self.mask_for_two_part[curr_mask_str]
+        return [m.to(device) for m in self.mask_for_two_part[curr_mask_str]]
     
     def get_one_channel_four_parts_mask(self, height, width, dtype, device):
         micro_mask_0 = torch.tensor(((1, 0), (0, 0)), dtype=dtype, device=device)
@@ -203,7 +203,7 @@ class BB(nn.Module):
                 mask_2 = torch.cat((m * m2, m * m3, m * m0, m * m1), dim=1)
                 mask_3 = torch.cat((m * m1, m * m0, m * m3, m * m2), dim=1)
                 self.mask_for_four_part[curr_mask_str] = [mask_0, mask_1, mask_2, mask_3]
-        return self.mask_for_four_part[curr_mask_str]
+        return [m.to(device) for m in self.mask_for_four_part[curr_mask_str]]
     
     def get_one_channel_eight_parts_mask(self, height, width, dtype, device):
         patten_list = [((1, 0, 0, 0), (0, 0, 0, 0), (0, 0, 1, 0), (0, 0, 0, 0)), ((0, 0, 1, 0), (0, 0, 0, 0), (1, 0, 0, 0), (0, 0, 0, 0)), \
@@ -276,7 +276,7 @@ class BB(nn.Module):
                     mask_list.append(torch.cat([m * mask_list_one_channel[cat_list[i][j]] for j in range(8)], dim=1))
 
                 self.mask_for_eight_part[curr_mask_str] = mask_list
-        return self.mask_for_eight_part[curr_mask_str]
+        return [m.to(device) for m in self.mask_for_eight_part[curr_mask_str]]
     
     def get_mask_for_s1(self, batch, channel, height, width, dtype, device):
         assert channel % 8 == 0
@@ -301,7 +301,7 @@ class BB(nn.Module):
                 mask_2 = m * m2
                 mask_3 = m * m3
                 self.mask_for_rec_s2[curr_mask_str] = [mask_0, mask_1, mask_2, mask_3]
-        return self.mask_for_rec_s2[curr_mask_str]
+        return [m.to(device) for m in self.mask_for_rec_s2[curr_mask_str]]
     
     def get_mask_for_s2(self, batch, channel, height, width, dtype, device):
         assert channel % 8 == 0

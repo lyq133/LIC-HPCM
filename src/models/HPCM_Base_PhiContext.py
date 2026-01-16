@@ -145,9 +145,9 @@ class HPCM(basemodel):
         self.y_spatial_prior_s1_s2 = y_spatial_prior_s1_s2(M)
         self.y_spatial_prior_s3 = y_spatial_prior_s3(M)
 
-        self.adaptive_params_list = [
+        self.adaptive_params_list = nn.ParameterList([
             torch.nn.Parameter(torch.ones((1, M*3, 1, 1), device='cuda'), requires_grad=True) for _ in range(10)
-        ]
+        ])
         
         self.context_net = nn.ModuleList(conv1x1(2*M,2*M) for _ in range(2))
     
