@@ -6,7 +6,7 @@
 
 ✅We open-source the model `HPCM_Phi_Context`, which employs ψᵢ as progressive context in progressive context modeling. We release the model [checkpoint](https://drive.google.com/file/d/1DgH0GQwt4OGQI8EZBxYyucC25yHQv69Q/view) optimized for MSE with λ = 0.013. See [issue #3](https://github.com/lyq133/LIC-HPCM/issues/3) for detailed discussion.
 
-🎉Our new work based on HPCM, *"Scaling Learned Image Compression Models up to 1 Billion"*, has been released on arXiv! [[link]](https://arxiv.org/abs/2508.09075)
+🎉Our new work based on HPCM, *"Scaling Learned Image Compression Models up to 1 Billion"*, has been released on arXiv! [[link]](https://arxiv.org/abs/2508.09075) We have released the HPCM-1B [code](https://github.com/lyq133/LIC-HPCM/blob/master/src/models/HPCM_1B.py) and [checkpoint](https://drive.google.com/file/d/1dTtSoIMgyuZ2SYXZz9BrMfN-9m-NH6wM/view?usp=sharing) optimized for MSE with λ = 0.0483.
 
 ## Introduction
 
